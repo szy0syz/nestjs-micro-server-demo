@@ -13,6 +13,7 @@ export class AppController {
   @Post('add')
   // Define the logic to be executed
   async accumulate(@Body('data') data: number[])  {
+    console.log('~~~data', data);
     this.logger.log('Adding ' + data.toString()); // Log something on every call
     return this.mathService.accumulate(data); // use math service to calc result & return
   }
